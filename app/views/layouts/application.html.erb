@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Murmur</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/murmurs">つぶやき一覧</a></li>
+        <li><a href="/murmurs/new">新規投稿</a></li>
+      </ul>
+    </header>
+      <%= yield %>
+    <footer>
+      <p>ムーマー株式会社</p>
+      <p>© 2018 Copyright Murmur Corp.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>つぶやき一覧</h1>
+    <p><%= notice %></p>
+    <div class="new-murmur-link">
+      <%= link_to '新しくつぶやく', new_murmur_path , class: 'btn btn-success'%>
+    </div>
+    <br>
+    
+    <% @murmurs.each do |murmur| %>
+      <div class="murmur-panel">
+        <p class="murmur-text"><%= murmur.content %></p>
+        <div class="murmur-links">
+         <td><%= link_to "編集", edit_murmur_path(murmur.id), class: 'btn btn-info' %></td>
+         <td><%= link_to '削除', murmur_path(murmur.id), method: :delete,data: {confirm:'本当に削除しますか？'}, class: 'btn btn-danger' %></td>
+         <p><%= murmur.created_at %></p>
+         <hr>
+        </div>
+      </div>
+    <% end %>
+</div>
